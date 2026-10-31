@@ -86,8 +86,9 @@ if las_data is not None:
             avg_phi = df_sub[por_col].mean()
             # تعديل النسبة إذا كانت القيم بين 0 و 1 أو مئوية
             if avg_phi < 1.0:
-                avg_phi *= 100          st.metric(label=f"متوسط المسامية ({por_col}) للنطاق المختار", value=f"{avg_phi:.2f} %")
-                # التبويب الثاني: المجهر الافتراضي
+                avg_phi *= 100
+            st.metric(label=f"متوسط المسامية ({por_col}) للنطاق المختار", value=f"{avg_phi:.2f} %")
+            # التبويب الثاني: المجهر الافتراضي
     with tab2:
         st.subheader("المجهر الافتراضي لشرائح صخور الخزان")
         col1, col2 = st.columns(2)
